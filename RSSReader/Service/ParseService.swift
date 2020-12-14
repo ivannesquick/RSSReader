@@ -34,7 +34,8 @@ class ParseService:NSObject,XMLParserDelegate {
             do {
                 guard let url = URL(string: urlString) else { return }
                 let data = try Data(contentsOf: url)
-                currentImage = UIImage(data: data)!
+                self.currentImage = UIImage(data: data)!
+                
             }
             catch {
                 print(error)

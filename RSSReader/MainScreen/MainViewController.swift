@@ -41,7 +41,7 @@ class MainViewController: UIViewController, IMainView {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 5
-        view.backgroundColor = UIColor.rgb(red: 255, green: 96, blue: 96)
+        view.backgroundColor = UIColor.rgb(red: 170, green: 213, blue: 244)
         view.isHidden = true
         return view
     }()
@@ -54,8 +54,8 @@ class MainViewController: UIViewController, IMainView {
         return label
     }()
     
-    fileprivate var changeColourBlackAndWhiteButton = UIButton.setupButton(title: "Blach and white", color: UIColor.rgb(red: 89, green: 118, blue: 229))
-    fileprivate var addBlurEffectButton = UIButton.setupButton(title: "Blur", color: UIColor.rgb(red: 89, green: 118, blue: 229))
+    fileprivate var monoEffectButton = UIButton.setupButton(title: "Mono", color: UIColor.rgb(red: 89, green: 118, blue: 229))
+    fileprivate var chromeEffectButton = UIButton.setupButton(title: "Chrome", color: UIColor.rgb(red: 89, green: 118, blue: 229))
     
     
     
@@ -69,16 +69,16 @@ class MainViewController: UIViewController, IMainView {
     }
     
     private func addTarget() {
-        changeColourBlackAndWhiteButton.addTarget(self, action: #selector(changeBlackWhite), for: .touchUpInside)
-        addBlurEffectButton.addTarget(self, action: #selector(addBlur), for: .touchUpInside)
+        monoEffectButton.addTarget(self, action: #selector(changeMonoEffect), for: .touchUpInside)
+        chromeEffectButton.addTarget(self, action: #selector(addChrome), for: .touchUpInside)
     }
     
-    @objc private func changeBlackWhite() {
-        mainPresenter.changeBlackAndWhite()
+    @objc private func changeMonoEffect() {
+        mainPresenter.monoEffect()
     }
     
-    @objc private func addBlur() {
-        mainPresenter.addBlurEffectInImage()
+    @objc private func addChrome() {
+        mainPresenter.chromeEffect()
     }
     
     private func setupConstraint() {
@@ -95,7 +95,7 @@ class MainViewController: UIViewController, IMainView {
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -5).isActive = true
         tableView.bottomAnchor.constraint(equalTo: containerView.topAnchor, constant: -5).isActive = true
         
-        let stackView = UIStackView(arrangedSubviews: [changeColourBlackAndWhiteButton, addBlurEffectButton])
+        let stackView = UIStackView(arrangedSubviews: [monoEffectButton, chromeEffectButton])
         stackView.axis = .horizontal
         stackView.spacing = 16
         stackView.distribution = .fillEqually

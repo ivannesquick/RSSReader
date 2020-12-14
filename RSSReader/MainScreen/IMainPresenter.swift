@@ -12,6 +12,6 @@ protocol IMainPresenter: class {
     func getData()
     func getItems() -> [Item]
     func dataCount() -> Int
-    func changeBlackAndWhite()
-    func addBlurEffectInImage()
+    func monoEffect()
+    func chromeEffect()
 }

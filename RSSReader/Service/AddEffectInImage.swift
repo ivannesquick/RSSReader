@@ -40,5 +40,7 @@ class AddEffectInImage {
         let outputImage = blurFilter.outputImage!
         return UIImage(ciImage: outputImage)
     }
+    
+    
 
 }

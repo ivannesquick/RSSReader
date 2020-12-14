@@ -51,22 +51,25 @@ class MainPresenter: IMainPresenter {
     }
     
     
-    func changeBlackAndWhite() {
-        let grayScaleImage = dataItem.map { grayImage -> Item in
-            let grayImageItem = Item(title: grayImage.title, image: addEffect.convertToGrayScale(image: grayImage.image!))
-            return grayImageItem
-        }
-        dataItem = grayScaleImage
+    func monoEffect() {
+        addEffect(filterType: .Mono)
         self.view?.reloadDataInTable()
     }
     
-    func addBlurEffectInImage() {
-        let blurScaleImage = dataItem.map { blurImage -> Item in
-            let blurImageItem = Item(title: blurImage.title, image: addEffect.addBlurEffect(image: blurImage.image!))
-            return blurImageItem
-        }
-        dataItem = blurScaleImage
+    func chromeEffect() {
+        addEffect(filterType: .Chrome)
         self.view?.reloadDataInTable()
+    }
+    
+    private func addEffect(filterType: FilterType) -> [Item] {
+        DispatchQueue.main.async {
+            let effectScaleImage = self.dataItem.map { imageInput -> Item in
+                let imageItemEffect = Item(title: imageInput.title, image: imageInput.image?.addFilter(filter: filterType))
+                return imageItemEffect
+            }
+            self.dataItem = effectScaleImage
+        }
+        return dataItem
     }
     
     

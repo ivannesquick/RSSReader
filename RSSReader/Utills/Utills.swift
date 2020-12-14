@@ -16,23 +16,24 @@ extension UIButton {
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = color
         button.layer.cornerRadius = 5
-//        button.addTarget(self, action: action, for: .touchUpInside)
+        //        button.addTarget(self, action: action, for: .touchUpInside)
         return button
     }
 }
 
 extension UIImage {
-    var noir: UIImage? {
-    let context = CIContext(options: nil)
-    if let filter = CIFilter(name: "CIPhotoEffectNoir") {
-        filter.setValue(CIImage(image: self), forKey: kCIInputImageKey)
-        if let output = filter.outputImage {
-            if let cgImage = context.createCGImage(output, from: output.extent) {
-                return UIImage(cgImage: cgImage)
-            }
-        }
-    }
-    return nil
+    func addFilter(filter : FilterType) -> UIImage {
+        let filter = CIFilter(name: filter.rawValue)
+        // convert UIImage to CIImage and set as input
+        let ciInput = CIImage(image: self)
+        filter?.setValue(ciInput, forKey: "inputImage")
+        // get output CIImage, render as CGImage first to retain proper UIImage scale
+        let ciOutput = filter?.outputImage
+        let ciContext = CIContext()
+        let cgImage = ciContext.createCGImage(ciOutput!, from: (ciOutput?.extent)!)
+        //Return the image
+        
+        return UIImage(cgImage: cgImage!)
     }
 }
 
