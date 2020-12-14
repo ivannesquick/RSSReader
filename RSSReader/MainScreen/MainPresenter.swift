@@ -13,7 +13,6 @@ class MainPresenter: IMainPresenter {
     private var view:IMainView?
     private var networkManager = NetworkManager()
     private var parseService = ParseService()
-    private lazy var addEffect = AddEffectInImage()
     private var dataItem: [Item] = []
     
     init(view: IMainView) {
