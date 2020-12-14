@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E84B10132585121A009F3E0A /* Utills.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84B10122585121A009F3E0A /* Utills.swift */; };
-		E84B10172586047F009F3E0A /* AddEffectInImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84B10162586047F009F3E0A /* AddEffectInImage.swift */; };
 		E84B101925879874009F3E0A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E84B101825879874009F3E0A /* .gitignore */; };
 		E84B101B25879B70009F3E0A /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84B101A25879B70009F3E0A /* FilterType.swift */; };
 		E8E5DD972580FD0700BFB24D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E5DD962580FD0700BFB24D /* AppDelegate.swift */; };
@@ -29,7 +28,6 @@
 
 /* Begin PBXFileReference section */
 		E84B10122585121A009F3E0A /* Utills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utills.swift; sourceTree = "<group>"; };
-		E84B10162586047F009F3E0A /* AddEffectInImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEffectInImage.swift; sourceTree = "<group>"; };
 		E84B101825879874009F3E0A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E84B101A25879B70009F3E0A /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
 		E8E5DD932580FD0700BFB24D /* RSSReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +118,6 @@
 			children = (
 				E8E5DDB82581060E00BFB24D /* NetworkManager.swift */,
 				E8E5DDC22581143100BFB24D /* ParseService.swift */,
-				E84B10162586047F009F3E0A /* AddEffectInImage.swift */,
 				E84B101A25879B70009F3E0A /* FilterType.swift */,
 			);
 			path = Service;
@@ -222,7 +219,6 @@
 				E8E5DDB62581043200BFB24D /* IMainView.swift in Sources */,
 				E8E5DD972580FD0700BFB24D /* AppDelegate.swift in Sources */,
 				E8E5DDB92581060E00BFB24D /* NetworkManager.swift in Sources */,
-				E84B10172586047F009F3E0A /* AddEffectInImage.swift in Sources */,
 				E8E5DDB22581038500BFB24D /* IMainPresenter.swift in Sources */,
 				E84B10132585121A009F3E0A /* Utills.swift in Sources */,
 				E8E5DD992580FD0700BFB24D /* SceneDelegate.swift in Sources */,
